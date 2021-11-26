@@ -1,6 +1,6 @@
 pipeline {
     agent any
-
+   def location = C:\\ProgramData\\Jenkins\\.jenkins\\workspace\\maven-pipeline\\target\\my-app-1.0-SNAPSHOT.jar
     tools{
         maven "mvn"
     }
@@ -15,5 +15,10 @@ pipeline {
                 bat 'mvn clean test package'
             }
         }
-    }   
+        post{
+        success{
+            bat 'java - jar %location%'
+        }
+   }
+    
 }
