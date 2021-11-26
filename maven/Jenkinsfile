@@ -16,6 +16,7 @@ pipeline {
                 bat 'mvn clean test package'
             }
         }
+    }
     post{
         success{
             bat 'java - jar %location%'
