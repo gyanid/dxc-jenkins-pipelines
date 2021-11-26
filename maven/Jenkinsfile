@@ -1,7 +1,10 @@
 pipeline {
     agent any
-
-   def location = 'C:\\ProgramData\\Jenkins\\.jenkins\\workspace\\maven-pipeline\\target\\my-app-1.0-SNAPSHOT.jar'
+     environment{
+     location = 'C:\\ProgramData\\Jenkins\\.jenkins\\workspace\\maven-pipeline\\target\\my-app-1.0-SNAPSHOT.jar'
+    }
+    
+   
     tools{
         maven "mvn"
     }
